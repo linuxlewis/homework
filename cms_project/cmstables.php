@@ -27,6 +27,7 @@ EOS;
         PRIMARY KEY (article_id),
         KEY IdxArticle(author_id,date_submitted),
         FULLTEXT KEY IdxText (title,body)
+        ENGINE = MYISAM
     )
 EOS;
     $result = mysql_query($sql) or die(mysql_error());
@@ -38,7 +39,9 @@ EOS;
         comment_user int(11) NOT NULL default '0'
         comment text NOT NULL,
         PRIMARY KEY (comennt_id),
-        KEY IdxComment(article_id)
+        KEY IdxComment(article_id),
+        ENGINE = MYISAM
+    
     )
 EOS;
      $result = mysql_query($sql) or die(mysql_error());
@@ -51,6 +54,7 @@ EOS;
         access_lvl tinyint(4) NOT NULL default '1',
         PRIMARY KEY (user_id)
         UNIQUE KEY uniq_email(email)
+        ENGINE = MYISAM
     )
 EOS;
      $result = mysql_query($sql) or die(mysql_error());

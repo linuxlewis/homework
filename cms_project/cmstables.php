@@ -1,6 +1,6 @@
 <?php
 
-    requires_once 'conn.php';
+    require_once 'conn.php';
     $sql = <<<EOS
     CREATE TABLE IF NOT EXISTS cmd_access_levels(
         access_lvl tinyint(4) NOT NULL auto_increment,

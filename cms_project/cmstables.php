@@ -2,7 +2,7 @@
 
     require_once 'conn.php';
     $sql = <<<EOS
-    CREATE TABLE IF NOT EXISTS cmd_access_levels(
+    CREATE TABLE IF NOT EXISTS cms_access_levels(
         access_lvl tinyint(4) NOT NULL auto_increment,
         access_name varchar(50) NOT NULL default '',
         PRIMARY KEY (access_lvl)
@@ -27,7 +27,6 @@ EOS;
         PRIMARY KEY (article_id),
         KEY IdxArticle(author_id,date_submitted),
         FULLTEXT KEY IdxText (title,body)
-        ENGINE = MYISAM
     )
 EOS;
     $result = mysql_query($sql) or die(mysql_error());
@@ -36,11 +35,10 @@ EOS;
         comment_id int(11) NOT NULL auto_increment,
         article_id int(11) NOT NULL default '0',
         comment_date datetime NOT NULL default '0000-00-00 00:00:00',
-        comment_user int(11) NOT NULL default '0'
+        comment_user int(11) NOT NULL default '0',
         comment text NOT NULL,
-        PRIMARY KEY (comennt_id),
-        KEY IdxComment(article_id),
-        ENGINE = MYISAM
+        PRIMARY KEY (comment_id),
+        KEY IdxComment(article_id)
     
     )
 EOS;
@@ -52,16 +50,15 @@ EOS;
         password varchar(50) NOT NULL default '',
         name varchar(100) NOT NULL default '',
         access_lvl tinyint(4) NOT NULL default '1',
-        PRIMARY KEY (user_id)
+        PRIMARY KEY (user_id),
         UNIQUE KEY uniq_email(email)
-        ENGINE = MYISAM
     )
 EOS;
      $result = mysql_query($sql) or die(mysql_error());
      $adminemail = "sbolgert@gmail.com";
      $adminpass = "pass";
      $adminname ="pass";
-     $sql = "INSERT INTO cms_users" .
+     $sql = "INSERT INTO cms_users " .
      "VALUES (NULL, '$adminemail','$adminpass','$adminname',3)";
       $result = mysql_query($sql) or die(mysql_error());
       echo "<html><head></head><body>tables created<p>".$adminemail."</p>";

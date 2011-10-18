@@ -11,7 +11,7 @@
     }
     else{
         while($row=mysql_fetch_array($result)){
-            outputStory($row['article_id'}, TRUE);
+            outputStory($row['article_id'], TRUE);
         }
     }
     require_once 'footer.php';

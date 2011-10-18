@@ -7,4 +7,5 @@
         else{
             die("Could not redirect header sent");
         }
+    }
 ?>

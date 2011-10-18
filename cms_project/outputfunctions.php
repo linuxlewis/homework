@@ -46,7 +46,7 @@
                 echo "</div></h4>";
                 if($only_snippet){
                     echo "<p>";
-                    echo n12br(htmlspecialchars(trimBody($row['body')));
+                    echo n12br(htmlspecialchars(trimBody($row['body'])));
                     echo "</p>";
                     echo "<h5><a href=\"viewarticle.php?article=" .
                         $row['article_id'] . "\">Full Story...</a></h5>";

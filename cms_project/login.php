@@ -10,7 +10,7 @@
 <p>
     <input type="submit" class="submit" name="action" value="Login" />
 </p>
-<p>Not a member yet?<a href="useraccount.php">Create an account.</a>
+<p>Not a member yet? <a href="useraccount.php">Create an account.</a>
 </p>
 <p><a href="forgotpass.php">Forgot your password?</a>
 </p>

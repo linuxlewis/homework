@@ -2,7 +2,7 @@
     require_once 'conn.php';
     require_once 'outputfunctions.php';
     require_once 'header.php';
-    $sql = "SELECT article_id from cms_articles where is_published=1" .
+    $sql = "SELECT article_id FROM cms_articles where is_published='1' " .
         "ORDER BY date_published DESC";
     $result = mysql_query($sql, $conn);
     if(mysql_num_rows($result)==0){

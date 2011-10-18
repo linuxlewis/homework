@@ -67,7 +67,7 @@
 
             case 'Send my reminder':
                 if(isset($_POST['email'])){
-                    $sql="SELECT passwd FROM cms_users " .
+                    $sql="SELECT password FROM cms_users " .
                     "WHERE email='" . $_POST['email'] . "'";
                     $result = mysql_query($sql,$conn) or die('Could not lookup password: ' . mysql_error());
                     if(mysql_num_rows($result)){

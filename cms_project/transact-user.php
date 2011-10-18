@@ -43,7 +43,7 @@
                         session_start();
                         $_SESSION['user_id'] = mysql_insert_id($conn);
                         $_SESSION['access_lvl'] = 1;
-                        $_SESSION['name'] = $_POST['name';
+                        $_SESSION['name'] = $_POST['name'];
                     }
                     redirect('index.php');
                     break;

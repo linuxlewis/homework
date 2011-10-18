@@ -35,7 +35,7 @@
 
 <?php
     if(isset($_SESSION['access_lvl'])
-        and $_SESSION['access_lvl']) == 3)
+        and $_SESSION['access_lvl'] == 3)
         {
             echo "<fieldset>\n";
             echo "<legend>Access Level</legend>\n";

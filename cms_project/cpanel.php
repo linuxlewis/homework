@@ -35,14 +35,14 @@
     if(mysql_num_rows($result) == 0){
         echo '<em>There are no pending articles </em>.';
     }
-    echo{
+    else{
         while($row = mysql_fetch_array($result)){
             echo "<tr>\n";
             echo '<td><a href="reviewarticle.php?article=' . 
             $row['article_id'] . '">' . htmlspecialchars($row['title']) .
             "</a> (submitted " .
-            date("F j, Y" , strototime($row['date_submitted'])) .
-            ")</td>\n"
+            date("F j, Y" , strtotime($row['date_submitted'])) .
+            ")</td>\n";
             echo "</tr>\n";
         }
     }

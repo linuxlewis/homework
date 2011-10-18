@@ -36,7 +36,7 @@
                     
                         $sql = "INSERT INTO cms_users (email,name,password) " .
                         "VALUES ('" . $_POST['email'] . "','" .
-                        $_POST['name'] . "','" . $_POST['password' . "')";
+                        $_POST['name'] . "','" . $_POST['password'] . "')";
 
                         mysql_query($sql,$conn)
                             or die('Could not create user account: ' .mysql_error());

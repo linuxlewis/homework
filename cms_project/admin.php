@@ -7,7 +7,7 @@
         $sql = "SELECT user_id, name, email FROM cms_users " .
         "WHERE access_lvl = $lvl ORDER BY name";
         $result = mysql_query($sql)
-            or die(mysql_error())
+            or die(mysql_error());
         if(mysql_num_rows($result) == 0){
             echo "<em>No " .$a_users[$lvl] . " created. </em>";
         }else{

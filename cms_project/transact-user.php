@@ -91,7 +91,7 @@
                     and isset($_SESSION['user_id'])){
                     $sql = "UPDATE cms_users " .
                     "SET email='" . $_POST['email'] .
-                    "', name='" . $_POST['name'] . "' " .
+                    "', name='" . $_POST['name'] . "', " .
                     "email_notify=".$_POST['email_notify'].
                     "WHERE user_id=" . $_SESSION['user_id'];
                 mysql_query($sql,$conn)

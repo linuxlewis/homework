@@ -18,6 +18,13 @@
     <input type="text" id="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>"/>
 </p>
 <p>
+    Email Notifications:<br/>
+    <input type="radio" name="email_notify" value="on" checked="<?php if($user['email_notify'] == 1){echo 'checked'; ?>"/>
+    
+     <input type="radio" name="email_notify" value="off" checked="<?php if($user['email_notify'] == 0){echo 'checked'; ?>"/>
+
+</p>
+<p>
     <input type="submit" class="submit" name="action" value="Change my info" />
 </p>
 </form>

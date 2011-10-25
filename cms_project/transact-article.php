@@ -75,6 +75,7 @@
                     date("Y-m-d H:i:s", time()) . "' ".
                     "WHERE article_id=" . $_POST['article'];
                     mysql_query($sql,$conn) or die('Could not publish article: ' . mysql_error());
+                    //mail system, sends email to author
                     $sql = "SELECT * from cms_users usr ".
                     "LEFT OUTER JOIN cms_articles ar on ".
                     "usr.user_id = ar.author_id ". 
@@ -84,7 +85,7 @@
                     $row = mysql_fetch_assoc($result);
                     $subject ="Cms Article Published";
                     $message = "Hello , ". $row['name'] ."\n".
-                    "Your article: ".$row['title'] . "has been published";
+                    "Your article: ".$row['title'] . " has been published";
                     $email = $row['email'];
                     $headers = "From: cms-spam@samb.webfactional.com\r\n";
                     mail($email,$subject,$message,$headers); 

@@ -65,7 +65,7 @@
                         redirect('cpanel.php');
                     }
                     else{
-                        redirec('pending.php');
+                        redirect('pending.php');
                     }
                     break;
             case 'Publish':

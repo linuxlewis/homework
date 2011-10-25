@@ -46,14 +46,14 @@
                 echo "</div></h4>";
                 if($only_snippet){
                     echo "<p>";
-                    echo n12br(htmlspecialchars(trimBody($row['body'])));
+                    echo nl2br(htmlspecialchars(trimBody($row['body'])));
                     echo "</p>";
                     echo "<h5><a href=\"viewarticle.php?article=" .
                         $row['article_id'] . "\">Full Story...</a></h5>";
                 }
                 else{
                     echo "<p>";
-                    echo n12br(html_entity_decode($row['body']));
+                    echo nl2br(html_entity_decode($row['body']));
                     echo "</p>";
                 }
             }

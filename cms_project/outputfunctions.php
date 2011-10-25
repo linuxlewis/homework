@@ -27,7 +27,7 @@
         if($article){
            $sql = "SELECT ar.*, usr.name " .
            "FROM cms_articles ar " .
-           "LEFT OUTER JOIN cms_user usr " .
+           "LEFT OUTER JOIN cms_users usr " .
            "ON ar.author_id = usr.user_id " .
            "WHERE ar.article_id = " . $article;
            $result = mysql_query($sql,$conn);

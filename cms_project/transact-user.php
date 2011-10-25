@@ -87,6 +87,7 @@
                 break;
             case 'Change my info':
                 session_start();
+                //sets email_notify for mail system
                 if(isset($_POST['name'])
                     and isset($_SESSION['user_id'])){
                     $sql = "UPDATE cms_users " .

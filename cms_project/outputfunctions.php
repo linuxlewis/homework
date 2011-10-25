@@ -69,7 +69,7 @@
             $result = mysql_query($sql,$conn) or die ('Could not look up comments:'. mysql_error());
             $row = mysql_fetch_array($result);
             $is_published = $row['is_published'];
-            $sql = "CONNECT co.*, usr.name, usr.email " .
+            $sql = "SELECT co.*, usr.name, usr.email " .
                 "FROM cms_comments co " .
                 "LEFT OUTER JOIN cms_users usr " .
                 "ON co.comment_user = usr.user_id " .

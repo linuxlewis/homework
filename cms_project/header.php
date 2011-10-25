@@ -1,6 +1,7 @@
 <?php session_start(); ?>
 <html>
     <head>
+        <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
         <title>CMS</title>
     </head>
 

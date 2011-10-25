@@ -8,7 +8,7 @@
 <form method="post" action="transact-article.php">
 <p>
     Comment:<br/>
-    <textarea id="comment" name="comment" rows="10" cols="60"></textarea?
+    <textarea id="comment" name="comment" rows="10" cols="60"></textarea>
 </p>
 <p>
     <input type="submit" class="submit" name="action" value="Submit Comment" />

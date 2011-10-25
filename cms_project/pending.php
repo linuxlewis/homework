@@ -1,9 +1,9 @@
 <?php
     require_once 'conn.php';
-    require_once 'http.php';
+    require_once 'header.php';
     $a_artTypes = array(
     "Pending" => "submitted",
-    "Published" =? "published"
+    "Published" => "published"
     );
     echo "<h2>Article Availability</h2>\n";
     $i = -1;
@@ -17,7 +17,7 @@
         "WHERE is_published=" . $i .
         " ORDER BY title";
         $result = mysql_query($sql, $conn)
-            or die('Could not get list of pending articles: ' mysql_error());
+            or die('Could not get list of pending articles: '. mysql_error());
             if(mysql_num_rows($result) == 0){
                 echo "<em> No " .$k . " articles available</em>";
             }else{

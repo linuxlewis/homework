@@ -10,7 +10,7 @@
         $sql = "SELECT ar.*, usr.name, usr.access_lvl " .
         "FROM cms_articles ar INNER JOIN cms_users usr " .
         "ON ar.author_id = usr.user_id " .
-        "WHERE article_id=" . $_GET['article'];
+        "WHERE ar.article_id=" . $_GET['article'];
         $result = mysql_query($sql,$conn)
             or die('Could not retrieve article information: ' . mysql_error());
         $row = mysql_fetch_array($result);
@@ -26,8 +26,8 @@
         else{
             $buttonType = "Publish";
         }
-        echo "<input type=\"subimt\" class=\"submit\" " .
-        "name=\"action\" value=\"edit\" /> ";
+        echo "<input type=\"submit\" class=\"submit\" " .
+        "name=\"action\" value=\"Edit\" /> ";
         if(($row['access_lvl'] > 1) or ($_SESSION['access_lvl'] > 1)){
             echo "<input type=\"submit\" class=\"submit\" " .
             "name=\"action\" value=\"$buttonType\"/>";

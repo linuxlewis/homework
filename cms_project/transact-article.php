@@ -18,6 +18,26 @@
                     date("Y-m-d H:i:s". time()) . "')";
                     mysql_query($sql,$conn)
                         or die('Could not submit article: ' .mysql_error());
+                
+                //email notification system
+                //sends email to admins
+                    $sql = "SELECT * ".
+                    "FROM cms_users " .
+                    "WHERE access_lvl = 3 AND " .
+                    "email_notify = 1";
+                
+              $result = mysql_query($sql,$conn) or die('Could not select admins' . mysql_error());
+
+            for($i = 0; $i < mysql_num_rows($result); $i++){
+                $row = mysql_fetch_assoc($result);
+                $email = $row['email'];
+                $subject = "New Article to Review";
+                $message = "Hello, ". $row['name'] .
+                "\n Please log to review the new article submitted";
+                $headers = "From:cms-spam@samb.webfactional.com\r\n";
+                mail($email,$subject,$message,$headers);
+            
+            }
                 }
             redirect('index.php');
             break;

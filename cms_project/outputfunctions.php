@@ -73,7 +73,7 @@
                 "FROM cms_comments co " .
                 "LEFT OUTER JOIN cms_users usr " .
                 "ON co.comment_user = usr.user_id " .
-                "WHERE co.article_id=" . $article .
+                "WHERE co.article_id=" . $article ." ".
                 "ORDER BY co.comment_date DESC";
 
             $result = mysql_query($sql, $conn) or die('Could not look up comments:' .mysql_error());

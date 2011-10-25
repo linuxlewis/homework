@@ -93,7 +93,7 @@
                         date("l F j, Y H:i", strtotime($row['comment'])) .
                         ")</span>";
                         echo "<p class=\"commentText\">".
-                        n12br(htmlspecialchars($row['comment'])) .
+                        nl2br(htmlspecialchars($row['comment'])) .
                         "</p>";
                     }
                     echo "</div>";

@@ -35,7 +35,7 @@
         echo "<input type=\"submit\" class=\"submit\" " .
             "name=\"action\" value=\"Delete\"> ";
         ?>
-        <input type="hidden" name="article value="<?php echo $_GET['article'] ?>"/>
+        <input type="hidden" name="article" value="<?php echo $_GET['article'] ?>"/>
         </p>
     </form>
 <?php require_once 'footer.php'; ?>

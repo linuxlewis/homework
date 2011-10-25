@@ -28,7 +28,7 @@
             case 'Save Changes':
                 if(isset($_POST['title'])
                     and isset($_POST['body'])
-                    and isset($_POST['article'])
+                    and isset($_POST['article']))
                     {
                         $sql = "UPDATE cms_articles " .
                         "SET title='" . $_POST['title'] .
@@ -50,7 +50,7 @@
                     break;
             case 'Publish':
                 if($_POST['article']){
-                    $sql = "UPDATE cms_artiles " .
+                    $sql = "UPDATE cms_articles " .
                     "SET is_published = 1, date_published='" .
                     date("Y-m-d H:i:s", time()) . "' ".
                     "WHERE article_id=" . $_POST['article'];

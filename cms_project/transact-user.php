@@ -92,7 +92,7 @@
                     $sql = "UPDATE cms_users " .
                     "SET email='" . $_POST['email'] .
                     "', name='" . $_POST['name'] . "' " .
-                    "email_notify='".$_POST['email_notify']."' ".
+                    "email_notify=".$_POST['email_notify'].
                     "WHERE user_id=" . $_SESSION['user_id'];
                 mysql_query($sql,$conn)
                     or die('Could not update your user account: ' .mysql_error());

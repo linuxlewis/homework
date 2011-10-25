@@ -1,7 +1,7 @@
 <?php
     require_once 'conn.php';
     require_once 'header.php';
-    $sql = "SELECT name, email " .
+    $sql = "SELECT name, email, email_notify " .
     "FROM cms_users " .
     "WHERE user_id=" . $_SESSION['user_id'];
     $result = mysql_query($sql,$conn)

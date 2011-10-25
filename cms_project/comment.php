@@ -16,6 +16,6 @@
 </p>
 </form>
 <?php
-showComment($_GET['article'], FALSE);
+showComments($_GET['article'], FALSE);
 require_once 'footer.php';
 ?>

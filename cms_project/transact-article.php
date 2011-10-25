@@ -33,7 +33,7 @@
                 $email = $row['email'];
                 $subject = "New Article to Review";
                 $message = "Hello, ". $row['name'] .
-                "\n Please log to review the new article submitted";
+                "\nPlease log to review the new article submitted";
                 $headers = "From:cms-spam@samb.webfactional.com\r\n";
                 mail($email,$subject,$message,$headers);
             
@@ -75,6 +75,19 @@
                     date("Y-m-d H:i:s", time()) . "' ".
                     "WHERE article_id=" . $_POST['article'];
                     mysql_query($sql,$conn) or die('Could not publish article: ' . mysql_error());
+                    $sql = "SELECT * from cms_users, cms_articles ".
+                    "LEFT OUTER JOIN cms_articles on ".
+                    "cms_users.user_id = cms_articles.author_id ". 
+                    "WHERE cms_articles.article_id =".$_POST['article'];
+
+                    $result = mysql_query($sql,$conn) or die ('Could not query users:' . mysql_error());
+                    $row = mysql_fetch_assoc($result);
+                    $subject ="Cms Article Published";
+                    $message = "Hello , ". $row['name'] ."\n".
+                    "Your article: ".$row['title'] . "has been published";
+                    $email = $row['email'];
+                    $headers = "From: cms-spam@samb.webfactional.com\r\n";
+                    mail($email,$subject,$message,$headers); 
                 }
                 redirect('pending.php');
                 break;

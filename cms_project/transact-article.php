@@ -75,8 +75,8 @@
                     date("Y-m-d H:i:s", time()) . "' ".
                     "WHERE article_id=" . $_POST['article'];
                     mysql_query($sql,$conn) or die('Could not publish article: ' . mysql_error());
-                    $sql = "SELECT * from cms_users, cms_articles ".
-                    "LEFT OUTER JOIN cms_articles on ".
+                    $sql = "SELECT * from cms_users, ar ".
+                    "LEFT OUTER JOIN cms_articles ar on ".
                     "cms_users.user_id = cms_articles.author_id ". 
                     "WHERE cms_articles.article_id =".$_POST['article'];
 

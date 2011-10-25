@@ -21,28 +21,28 @@
     require_once 'header.php';
 ?>
 <form method="post" action="transact-article.php">
-    <h2>Compose ARticle</h2>
+    <h2>Compose Article</h2>
     <p>
         Title: <br/>
         <input type="text" class="title" name="title" maxlength="255" value="<?php echo htmlspecialchars($title);?>"/>
     </p>
     <p>
         Body:<br/>
-        <textarea class="body" name="body" rows="10" cols="60"<?php echo htmlspecialchars($body);?></textarea>
+        <textarea class="ckeditor" name="body" rows="10" cols="60"><?php echo htmlspecialchars($body);?></textarea>
     </p>
     <p>
         <?php
             echo '<input type="hidden" name="article" value="' .
             $article . "\" />\n";
             if($_SESSION['access_lvl'] < 2){
-                echo '<input type="hidden" name="authorid" value="' ./
+                echo '<input type="hidden" name="authorid" value=\"' .
                 $authorid . "\" />\n";
             }
             if($article){
                 echo '<input type="submit" class="submit" name="action" ' .
                 "value=\"Save Changes\" />";
             }
-            echo {
+            else {
                 echo '<input type="submit" class="submit" name="action" ' .
                 "value=\"Submit New Article\" />";
             }

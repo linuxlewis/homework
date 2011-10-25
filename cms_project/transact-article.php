@@ -53,7 +53,7 @@
                         $sql = "UPDATE cms_articles " .
                         "SET title='" . $_POST['title'] .
                         "', body='" . $_POST['body'] .
-                        "'. date_submitted='" . date("Y-m-d H:i:s", time()) . "' " .
+                        "', date_submitted='" . date("Y-m-d H:i:s", time()) . "' " .
                         "WHERE article_id=" . $_POST['article'];
                         if(isset($_POST['authorid'])){
                             $sql .= " AND author_id=" . $_POST['authorid'];

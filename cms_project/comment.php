@@ -1,6 +1,6 @@
 <?php
-    require_once 'conn.php'
-    require_once 'outputfunctions.php'
+    require_once 'conn.php';
+    require_once 'outputfunctions.php';
     require_once 'header.php';
     outputStory($_GET['article']);
 ?>

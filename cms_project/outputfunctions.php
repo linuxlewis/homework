@@ -80,7 +80,7 @@
                 if($showLink){
                     echo "<h4>" . mysql_num_rows($result) . " Comments";
                     if(isset($_SESSION['user_id']) and $is_published){
-                        echo " / <a href=\"comment.php?article=".$_GET['article'] . "\"?Add one</a>";
+                        echo " / <a href=\"comment.php?article=".$_GET['article'] . "\">Add one</a>";
                     }
                     echo "</h4>";
                }

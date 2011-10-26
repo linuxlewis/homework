@@ -19,10 +19,10 @@
 </p>
 <p>
     Email Notifications:<br/>
-On    <input type="radio" name="email_notify" value="1" checked="<?php if($user['email_notify'] == 1){echo 'checked';} ?>"/>
+On    <input type="radio" name="email_notify" value="1" <?php if($user['email_notify'] == 1){echo 'checked=\"checked\"';} ?>/>
   <br/>  
   Off
-     <input type="radio" name="email_notify" value="0" checked="<?php if($user['email_notify'] == 0){echo 'checked';} ?>"/>
+     <input type="radio" name="email_notify" value="0" <?php if($user['email_notify'] == 0){echo 'checked=\"checked\"';} ?>/>
 
 </p>
 <p>

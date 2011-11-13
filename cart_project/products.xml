@@ -1,0 +1,32 @@
+<products>
+    <product>
+        <name>Wrecking Ball Lamp</name>
+        <description>A lamp that looks like a wrecking ball</description>
+        <price>49.99</price>
+        <image>images/wreck_lamp.jpg</image>
+    </product>
+    <product>
+        <name>Oranate Lamp</name>
+        <description>Great gift for Grandma!</description>
+        <price>129.99</price>
+        <image>images/ornate_lamp.jpg</image>
+    </product>
+    <product>
+        <name>Desk Lamp</name>
+        <description>A Lamp for your desk</description>
+        <price>35.99</price>
+        <image>images/desk_lamp.jpg</image>
+    </product>
+    <product>
+        <name>Tall Lamp</name>
+        <description> A great lamp for a room.</description>
+        <price>78.50</price>
+        <image>images/tall_lamp.jpg</image>
+    </product>
+    <product>
+        <name>Tree Lamp</name>
+        <description>A lamp with a tree design</description>
+        <price>299.99</price>
+        <image>images/tree_lamp.jpg</image>
+    </product>
+</products>

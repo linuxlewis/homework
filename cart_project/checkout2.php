@@ -6,6 +6,8 @@
 
 
     //if checked
+        if(isset($_POST['sameInfo']) && $_POST['sameInfo'] == 'yes'){
+
         $o_firstname = $_POST["c_firstname"];
         $o_lastname = $_POST["c_lastname"];
         $o_streetone = $_POST["c_streetone"];
@@ -14,6 +16,8 @@
         $o_state = $_POST["c_state"];
         $o_phonenumber = $_POST["c_phonenumber"];
         $o_zipcode = $_POST["c_zipcode"];
+        }
+        else{
     //else
         $o_firstname = $_POST["o_firstname"];
         $o_lastname = $_POST["o_lastname"];
@@ -23,7 +27,7 @@
         $o_state = $_POST["o_state"];
         $o_phonenumber = $_POST["o_phonenumber"];
         $o_zipcode = $_POST["o_zipcode"];
-    
+        } 
     //add into store_order
     $sql = "INSERT into store_order(customer_id,order_firstname,order_lastname,order_streetone,".
     "order_streettwo,order_city,order_state,order_zipcode,order_phone) ".
@@ -92,4 +96,7 @@
             "<li>".$row['order_streetone'] . "</li>" .
             "<li>".$row['order_city'] . "," . $row['order_state'] . " " . $row['order_zip'] .
             "</li></ul>";
-    
+    echo "<p>Total before shipping:$".$row['order_subtotal'] ."</p>";
+    echo "<p>Shipping Costs:$".$row['order_shipping'] . "</p>";
+    echo "<p>Total:$".$row['order_total'] . "</p>";
+    require_once 'footer.php';
